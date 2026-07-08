@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - name: selftest
+        run: python tracker.py selftest
+      - name: report
+        run: python tracker.py report --file examples/demo-usage.jsonl
+      - name: dashboard
+        run: python tracker.py dashboard --file examples/demo-usage.jsonl --out examples/dashboard.html
+      - name: unknown-model log (cost null, no crash)
+        run: python tracker.py log --model does-not-exist --in 10 --out 10 --file /tmp/u.jsonl

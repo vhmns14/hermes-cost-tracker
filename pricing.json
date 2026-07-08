@@ -1,0 +1,11 @@
+{
+  "_note": "Prices are USD per 1,000,000 tokens. hermes-4-70b & hermes-4-405b are from OpenRouter (verified). Others are estimates — edit to match your provider. Unknown models default to 0 unless listed here.",
+  "models": {
+    "hermes-4-70b": {"in": 0.13, "out": 0.40},
+    "hermes-4-405b": {"in": 1.00, "out": 3.00},
+    "deepharmes-3-mistral-24b-preview": {"in": 0.04, "out": 0.12},
+    "hermes-3-8b": {"in": 0.00, "out": 0.00},
+    "hermes-3-70b": {"in": 0.00, "out": 0.00},
+    "hermes-3-405b": {"in": 0.00, "out": 0.00}
+  }
+}

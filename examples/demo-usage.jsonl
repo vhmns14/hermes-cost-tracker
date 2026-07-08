@@ -1,0 +1,5 @@
+{"ts": "2026-07-04T18:13:35.201719+00:00", "model": "hermes-4-70b", "in": 12000, "out": 3000, "cost": 0.00276, "note": "daily digest"}
+{"ts": "2026-07-05T18:13:35.201719+00:00", "model": "hermes-4-70b", "in": 8000, "out": 5200, "cost": 0.00312, "note": "code review"}
+{"ts": "2026-07-06T18:13:35.201719+00:00", "model": "hermes-4-405b", "in": 40000, "out": 9000, "cost": 0.067, "note": "hard reasoning"}
+{"ts": "2026-07-07T18:13:35.201719+00:00", "model": "hermes-4-70b", "in": 15000, "out": 4200, "cost": 0.00363, "note": "chat"}
+{"ts": "2026-07-08T18:13:35.201719+00:00", "model": "deepharmes-3-mistral-24b-preview", "in": 9000, "out": 2600, "cost": 0.000672, "note": "summarize"}
