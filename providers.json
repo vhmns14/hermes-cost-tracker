@@ -1,5 +1,5 @@
 {
-  "_note": "Reference pricing (USD per 1,000,000 tokens) for many providers. Edit to match your account. `env_key` is the ENVIRONMENT VARIABLE name the tracker reads your API key from — NEVER put the actual key here or commit it. Unknown models cost as null.",
+  "_note": "Reference pricing (USD per 1,000,000 tokens), mostly verified 2026-06/07 from provider pages & aggregators. Rates change often — edit to match your account. `env_key` is the ENVIRONMENT VARIABLE name the tracker reads your API key from — NEVER put the actual key here or commit it. Unknown models cost as null.",
   "providers": {
     "openrouter": {
       "label": "OpenRouter",
@@ -68,6 +68,103 @@
       "models": {
         "hermes3:8b": {"in": 0.0, "out": 0.0},
         "hermes3:70b": {"in": 0.0, "out": 0.0}
+      }
+    },
+    "qwen": {
+      "label": "Alibaba Qwen (DashScope)",
+      "env_key": "DASHSCOPE_API_KEY",
+      "models": {
+        "qwen-max": {"in": 1.60, "out": 6.40},
+        "qwen-plus": {"in": 0.40, "out": 1.20},
+        "qwen-turbo": {"in": 0.05, "out": 0.20},
+        "qwen3.7-max": {"in": 1.25, "out": 3.75},
+        "qwen3.5-flash": {"in": 0.05, "out": 0.40},
+        "qwen3-coder-480b": {"in": 0.22, "out": 1.80}
+      }
+    },
+    "xiaomi": {
+      "label": "Xiaomi MiMo",
+      "env_key": "XIAOMI_API_KEY",
+      "models": {
+        "mimo-v2-pro": {"in": 1.00, "out": 3.00},
+        "mimo-v2.5-pro": {"in": 0.43, "out": 0.87},
+        "mimo-v2.5": {"in": 0.14, "out": 0.28}
+      }
+    },
+    "tencent": {
+      "label": "Tencent Hunyuan",
+      "env_key": "HUNYUAN_API_KEY",
+      "models": {
+        "hunyuan-turbos": {"in": 0.11, "out": 0.28},
+        "hunyuan-t1": {"in": 0.14, "out": 0.56},
+        "hunyuan-hy3-preview": {"in": 0.063, "out": 0.21}
+      }
+    },
+    "deepseek": {
+      "label": "DeepSeek",
+      "env_key": "DEEPSEEK_API_KEY",
+      "models": {
+        "deepseek-v4-flash": {"in": 0.14, "out": 0.28},
+        "deepseek-v4-pro": {"in": 0.435, "out": 0.87},
+        "deepseek-v3.2": {"in": 0.28, "out": 0.42},
+        "deepseek-r1": {"in": 0.55, "out": 2.19}
+      }
+    },
+    "moonshot": {
+      "label": "Moonshot Kimi",
+      "env_key": "MOONSHOT_API_KEY",
+      "models": {
+        "kimi-k2.6": {"in": 0.95, "out": 4.00},
+        "kimi-k2.5": {"in": 0.60, "out": 3.00},
+        "moonshot-v1-8k": {"in": 0.15, "out": 0.15}
+      }
+    },
+    "minimax": {
+      "label": "MiniMax",
+      "env_key": "MINIMAX_API_KEY",
+      "models": {
+        "minimax-m3": {"in": 0.30, "out": 1.20},
+        "minimax-m2.5": {"in": 0.27, "out": 0.95},
+        "minimax-01": {"in": 0.20, "out": 1.10}
+      }
+    },
+    "zhipu": {
+      "label": "Zhipu GLM",
+      "env_key": "ZHIPU_API_KEY",
+      "models": {
+        "glm-4.7-flash": {"in": 0.06, "out": 0.40},
+        "glm-4.5-air": {"in": 0.01, "out": 0.07},
+        "glm-4-9b": {"in": 0.01, "out": 0.01}
+      }
+    },
+    "stepfun": {
+      "label": "StepFun Step",
+      "env_key": "STEPFUN_API_KEY",
+      "models": {
+        "step-3.5-flash": {"in": 0.15, "out": 0.13}
+      }
+    },
+    "doubao": {
+      "label": "ByteDance Doubao",
+      "env_key": "DOUBAO_API_KEY",
+      "models": {
+        "seed-oss": {"in": 0.20, "out": 0.04}
+      }
+    },
+    "google": {
+      "label": "Google Gemini",
+      "env_key": "GEMINI_API_KEY",
+      "models": {
+        "gemini-3.1-pro": {"in": 2.00, "out": 12.00},
+        "gemini-3.1-flash": {"in": 0.25, "out": 1.50}
+      }
+    },
+    "azure": {
+      "label": "Azure OpenAI",
+      "env_key": "AZURE_OPENAI_API_KEY",
+      "models": {
+        "gpt-4o": {"in": 2.50, "out": 10.00},
+        "gpt-4o-mini": {"in": 0.15, "out": 0.60}
       }
     }
   }

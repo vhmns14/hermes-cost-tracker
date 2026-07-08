@@ -8,7 +8,7 @@ Agents can quietly rack up cost (the famous *runaway cost* problem). This tool l
 
 ## Features
 
-- 🌐 **Multi-provider** — OpenRouter, OpenAI, Anthropic, Nous Portal, DeepInfra, Groq, Together, Ollama (local), more in `providers.json`
+- 🌐 **Multi-provider** — OpenRouter, OpenAI, Anthropic, Nous Portal, DeepInfra, Groq, Together, Ollama, plus Qwen, Xiaomi MiMo, Tencent Hunyuan, DeepSeek, Moonshot Kimi, MiniMax, Zhipu GLM, StepFun, Doubao, Google Gemini, Azure — all editable in `providers.json`
 - 📊 Per-call logging: provider, model, input/output tokens, computed cost
 - 💵 Editable pricing table (`providers.json`) — per-provider, per-model rates
 - 🔑 **Secure keys** — API keys read from env vars or a git-ignored `config.json` (never committed)
