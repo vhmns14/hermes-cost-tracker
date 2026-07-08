@@ -1,0 +1,12 @@
+{
+  "_note": "Copy this file to config.json (which is git-ignored) and fill in your keys. Prefer environment variables over this file. Never commit real keys.",
+  "providers": {
+    "openrouter": "sk-or-xxxxxxxxxxxxxxxx",
+    "openai": "sk-xxxxxxxxxxxxxxxx",
+    "anthropic": "sk-ant-xxxxxxxxxxxxx",
+    "nous-portal": "np-xxxxxxxxxxxxxxxxx",
+    "deepinfra": "xxxxxxxxxxxxxxxxxxx",
+    "groq": "gsk_xxxxxxxxxxxxxxxxxx",
+    "together": "xxxxxxxxxxxxxxxxxxx"
+  }
+}

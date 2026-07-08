@@ -1,0 +1,9 @@
+# Secrets / local config — NEVER commit
+config.json
+.env
+*.local.json
+
+# Real usage logs & generated output (user data, not repo content)
+usage.jsonl
+dashboard.html
+__pycache__/

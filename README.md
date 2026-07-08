@@ -8,12 +8,22 @@ Agents can quietly rack up cost (the famous *runaway cost* problem). This tool l
 
 ## Features
 
-- 📊 Per-call logging: model, input/output tokens, computed cost
-- 💵 Pricing table (`pricing.json`) — edit to match your provider/model
+- 🌐 **Multi-provider** — OpenRouter, OpenAI, Anthropic, Nous Portal, DeepInfra, Groq, Together, Ollama (local), more in `providers.json`
+- 📊 Per-call logging: provider, model, input/output tokens, computed cost
+- 💵 Editable pricing table (`providers.json`) — per-provider, per-model rates
+- 🔑 **Secure keys** — API keys read from env vars or a git-ignored `config.json` (never committed)
+- 🔄 `sync` — pull real usage from providers that expose a usage API (OpenRouter supported)
 - 📈 `report` — totals by period and by model
 - 📉 `dashboard` — self-contained HTML with an SVG spend chart
 - 🧪 `selftest` — generates demo data to try it instantly
 - 🚫 **Zero dependencies** — Python 3 standard library only
+
+## Security
+
+API keys are **never** stored in this repo.
+- Keys come from environment variables (named per provider in `providers.json`, e.g. `OPENROUTER_API_KEY`) or a local `config.json` (copy from `config.json.example`).
+- `config.json`, `.env`, and your real `usage.jsonl` are git-ignored.
+- `providers` shows only whether a key is **set**, never the key value.
 
 ## Install
 
@@ -25,8 +35,18 @@ cd hermes-cost-tracker
 ## Usage
 
 ```bash
-# Log a real call (prices from pricing.json)
-python tracker.py log --model hermes-4-70b --in 12000 --out 3000 --note "daily digest"
+# Log a real call (provider resolves the price automatically)
+python tracker.py log --provider openrouter --model nousresearch/hermes-4-70b --in 12000 --out 3000 --note "daily digest"
+
+# Or let it find the model across all providers
+python tracker.py log --model gpt-4o --in 15000 --out 4200
+
+# List providers and which API keys are configured
+python tracker.py providers
+
+# Pull real usage from a provider (OpenRouter supported)
+export OPENROUTER_API_KEY=sk-or-...
+python tracker.py sync --provider openrouter --days 7
 
 # Summarize
 python tracker.py report --period week
@@ -42,11 +62,12 @@ python tracker.py dashboard --file examples/demo-usage.jsonl --out examples/dash
 
 Data is stored in `usage.jsonl` (one JSON object per line, append-only).
 
-## Pricing
+## Pricing & providers
 
-`pricing.json` holds USD-per-million-token rates. `hermes-4-70b` and `hermes-4-405b`
-match OpenRouter's published prices; others are placeholders — update them for your provider.
-Unknown models log cost as `null` (not computed).
+`providers.json` groups models by provider with USD-per-million-token rates
+(`hermes-4-70b` / `hermes-4-405b` match OpenRouter's published prices; others are
+placeholders — edit to match your account). Each provider declares the
+`env_key` the tracker reads its API key from. Unknown models log cost as `null`.
 
 ## License
 

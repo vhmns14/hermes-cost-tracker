@@ -1,0 +1,74 @@
+{
+  "_note": "Reference pricing (USD per 1,000,000 tokens) for many providers. Edit to match your account. `env_key` is the ENVIRONMENT VARIABLE name the tracker reads your API key from — NEVER put the actual key here or commit it. Unknown models cost as null.",
+  "providers": {
+    "openrouter": {
+      "label": "OpenRouter",
+      "env_key": "OPENROUTER_API_KEY",
+      "usage_api": "https://openrouter.ai/api/v1/usage",
+      "models": {
+        "nousresearch/hermes-4-70b": {"in": 0.13, "out": 0.40},
+        "nousresearch/hermes-4-405b": {"in": 1.00, "out": 3.00},
+        "nousresearch/deepharmes-3-mistral-24b-preview": {"in": 0.04, "out": 0.12},
+        "openai/gpt-4o": {"in": 2.50, "out": 10.00},
+        "anthropic/claude-3.5-sonnet": {"in": 3.00, "out": 15.00}
+      }
+    },
+    "openai": {
+      "label": "OpenAI",
+      "env_key": "OPENAI_API_KEY",
+      "models": {
+        "gpt-4o": {"in": 2.50, "out": 10.00},
+        "gpt-4o-mini": {"in": 0.15, "out": 0.60},
+        "gpt-3.5-turbo": {"in": 0.50, "out": 1.50}
+      }
+    },
+    "anthropic": {
+      "label": "Anthropic",
+      "env_key": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-3-5-sonnet": {"in": 3.00, "out": 15.00},
+        "claude-3-5-haiku": {"in": 0.25, "out": 1.25},
+        "claude-opus-4": {"in": 15.00, "out": 75.00}
+      }
+    },
+    "nous-portal": {
+      "label": "Nous Portal",
+      "env_key": "NOUS_PORTAL_API_KEY",
+      "models": {
+        "hermes-4-70b": {"in": 0.13, "out": 0.40},
+        "hermes-4-405b": {"in": 1.00, "out": 3.00}
+      }
+    },
+    "deepinfra": {
+      "label": "DeepInfra",
+      "env_key": "DEEPINFRA_API_KEY",
+      "models": {
+        "nousresearch/Hermes-3-Llama-3.1-8B": {"in": 0.02, "out": 0.02},
+        "meta-llama/Llama-3.3-70B-Instruct": {"in": 0.23, "out": 0.23}
+      }
+    },
+    "groq": {
+      "label": "Groq",
+      "env_key": "GROQ_API_KEY",
+      "models": {
+        "llama-3.3-70b-versatile": {"in": 0.59, "out": 0.79},
+        "mixtral-8x7b-32768": {"in": 0.24, "out": 0.24}
+      }
+    },
+    "together": {
+      "label": "Together AI",
+      "env_key": "TOGETHER_API_KEY",
+      "models": {
+        "meta-llama/Llama-3.3-70B-Instruct-Turbo": {"in": 0.88, "out": 0.88}
+      }
+    },
+    "ollama": {
+      "label": "Ollama (local)",
+      "env_key": "",
+      "models": {
+        "hermes3:8b": {"in": 0.0, "out": 0.0},
+        "hermes3:70b": {"in": 0.0, "out": 0.0}
+      }
+    }
+  }
+}
