@@ -1,0 +1,25 @@
+{
+  "period": "all",
+  "entries": 5,
+  "total_cost_usd": 0.1597,
+  "total_in_tokens": 84000,
+  "total_out_tokens": 24000,
+  "by_model": {
+    "openrouter/nousresearch/hermes-4-70b": {
+      "cost_usd": 0.0059,
+      "calls": 2
+    },
+    "openrouter/nousresearch/hermes-4-405b": {
+      "cost_usd": 0.067,
+      "calls": 1
+    },
+    "openai/gpt-4o": {
+      "cost_usd": 0.0795,
+      "calls": 1
+    },
+    "groq/llama-3.3-70b-versatile": {
+      "cost_usd": 0.0074,
+      "calls": 1
+    }
+  }
+}
